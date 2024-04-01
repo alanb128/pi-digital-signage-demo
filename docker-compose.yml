@@ -19,3 +19,17 @@ services:
     build: ./webserver
     ports:
       - "80:80"
+
+  big-sensor:
+    image: bh.cr/al_s_apps/big-sensor-armv7hf
+    restart: always
+    labels:
+      io.balena.features.supervisor-api: 1  # necessary to discover services
+    privileged: true # necessary to read sensors
+
+  signage:
+    build: ./signage
+    restart: always
+    volumes:
+      -  'my-data:/data/my-data'
+      
