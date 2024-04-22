@@ -1,8 +1,8 @@
-name: browser-block-demo
+name: pi-digital-signage-demo
 type: sw.application
 joinable: false
 description: >-
-  A ready-to-deploy example of the balena browser block, a hardware accelerated web browser to present internal and external URLs on a connected display.
+  A ready-to-deploy example of the balena browser block, integrated into a simple but dynamic digital signage demo.
 post-provisioning: >-
   ## Usage instructions
 
@@ -12,17 +12,17 @@ assets:
   repository:
     type: blob.asset
     data:
-      url: 'https://github.com/balena-io-experimental/browser-block-demo'
+      url: 'https://github.com/alanb128/pi-digital-signage-demo'
   logo:
     type: blob.asset
     data:
-      url: 'https://raw.githubusercontent.com/balena-io-experimental/browser-block-demo/master/logo.png'
+      url: 'https://raw.githubusercontent.com/alanb128/pi-digital-signage-demo/master/logo.jpg'
 data:
+  defaultDeviceType: raspberrypi4-64
   supportedDeviceTypes:
     - raspberrypi3-64
     - raspberrypi400-64
     - raspberrypi4-64
     - raspberrypi5
     - raspberrypi0-2w-64
-    - intel-nuc
-    - generic-amd64
+

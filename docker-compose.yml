@@ -2,6 +2,7 @@ version: '2'
 
 volumes:
   settings:                          # Only required if using PERSISTENT flag (see below)
+  my-data:
 
 services:
 
@@ -13,15 +14,18 @@ services:
         - '35173' # Chromium debugging port (optional)
     volumes:
       - 'settings:/data' # Only required if using PERSISTENT flag (see below)
-    network_mode: host  # Only needed to auto display web server on port 80
+    #network_mode: host  # Only needed to auto display web server on port 80
     
   webserver:
     build: ./webserver
     ports:
       - "80:80"
+    volumes:
+      -  'my-data:/data/my-data'
 
   big-sensor:
-    image: bh.cr/al_s_apps/big-sensor-armv7hf
+    #image: bh.cr/al_s_apps/big-sensor-armv7hf
+    build: ./big-sensor
     restart: always
     labels:
       io.balena.features.supervisor-api: 1  # necessary to discover services
@@ -32,4 +36,15 @@ services:
     restart: always
     volumes:
       -  'my-data:/data/my-data'
+    privileged: true
+    labels:
+      io.balena.features.supervisor-api: 1
+      
+  simple:
+    build: ./simple
+    restart: always
+    volumes:
+      -  'my-data:/data/my-data'
+    privileged: true
+
       

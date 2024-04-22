@@ -1,0 +1,16 @@
+version: '2'
+
+volumes:
+  settings:                          # Only required if using PERSISTENT flag (see below)
+  my-data:
+
+services:
+
+  big-sensor:
+    #image: bh.cr/al_s_apps/big-sensor-armv7hf
+    build: .
+    restart: always
+    labels:
+      io.balena.features.supervisor-api: 1  # necessary to discover services
+    privileged: true # necessary to read sensors
+
