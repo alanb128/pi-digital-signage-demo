@@ -1,7 +1,7 @@
 # Digital Signage Demo for Pi on balena
 
 
-This project is a ready-to-deploy example of the [balena browser block](https://github.com/balena-labs-projects/browser) integrated into a simple but dynamic digital signage demo. This demo runs on the balena platform and is compatible with 64 bit Raspberry Pis, including the Raspberry Pi 5.
+This project is a ready-to-deploy example of the [balena browser block](https://github.com/balena-labs-projects/browser) integrated into a simple but dynamic digital signage demo. This demo runs on the balena platform and is compatible with most 64 bit Raspberry Pis, including the Raspberry Pi 5.
 
 The browser block provides a hardware accelerated web browser to present internal and external URLs on a connected display. The browser block is a docker image that runs a Chromium browser via Wayland, optimized for balenaOS. This project runs on Raspberry Pi 3b+, 4, and 5.
 
