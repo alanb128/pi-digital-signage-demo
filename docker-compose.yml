@@ -18,6 +18,7 @@ services:
   browser:
     build: .
     privileged: true # required for sound (/dev/snd) and V4L2 video-decode (/dev/video*) device access
+    network_mode: host  # Only needed to auto display web server on port 80 etc...
     depends_on:
       - display
     environment:
