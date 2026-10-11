@@ -1,5 +1,6 @@
 # Digital Signage Demo for Pi on balena
 
+<img src="digi-sign-screen.png">
 
 This project is a ready-to-deploy example of the [balena browser block](https://github.com/balena-labs-projects/browser) integrated into a simple but dynamic digital signage demo. This demo runs on the balena platform and is compatible with most 64 bit Raspberry Pis, including the Raspberry Pi 5.
 
