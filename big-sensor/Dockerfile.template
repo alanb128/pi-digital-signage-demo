@@ -8,6 +8,7 @@ RUN apt update && apt install -y --upgrade python3-setuptools
 RUN apt-get update && apt-get install -y i2c-tools libgpiod-dev python3-libgpiod
 
 RUN pip3 install --upgrade adafruit-blinka \
+    lgpio rpi-lgpio \
     paho-mqtt requests smbus2 \
     # Adafruit sensor libraries:
     adafruit-circuitpython-pm25 \

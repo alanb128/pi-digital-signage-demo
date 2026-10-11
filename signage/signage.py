@@ -86,8 +86,14 @@ def device_info():
 
     device_info = ""
     
+    # 1. Fetch the necessary internal environment variables injected by balenaOS
+    supervisor_address = os.environ.get('BALENA_SUPERVISOR_ADDRESS')
+    supervisor_api_key = os.environ.get('BALENA_SUPERVISOR_API_KEY')
+    
+    url = f"{supervisor_address}/v1/device?apikey={supervisor_api_key}"
+    
     try:
-        r = requests.get(os.getenv('BALENA_SUPERVISOR_ADDRESS') + "/v1/device?apikey=" + os.getenv('BALENA_SUPERVISOR_API_KEY'))
+        r = requests.get(url, timeout=10)
     except:
         print("Unable to access device info via Supervisor API.")
     else:

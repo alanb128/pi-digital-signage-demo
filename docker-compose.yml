@@ -18,7 +18,6 @@ services:
   browser:
     build: .
     privileged: true # required for sound (/dev/snd) and V4L2 video-decode (/dev/video*) device access
-    network_mode: host  # Only needed to auto display web server on port 80 etc...
     depends_on:
       - display
     environment:
@@ -40,7 +39,6 @@ services:
       -  'my-data:/data/my-data'
 
   big-sensor:
-    #image: bh.cr/al_s_apps/big-sensor-armv7hf
     build: ./big-sensor
     restart: always
     labels:
@@ -56,11 +54,5 @@ services:
     labels:
       io.balena.features.supervisor-api: 1
       
-  simple:
-    build: ./simple
-    restart: always
-    volumes:
-      -  'my-data:/data/my-data'
-    privileged: true
 
       
