@@ -47,7 +47,7 @@ Our reference device has a few optional extra features:
 
 - A blue case LED on GPIO 26 that lights up when the signage service is running
 
-All of the above GPIO mappings can be modified in the `/usr/src/appsignage.py` file in the signage service.
+All of the above GPIO mappings can be modified in the `signage.py` file in the signage service.
 
 ## Customize
 
